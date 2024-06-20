@@ -6,8 +6,9 @@ namespace CalculatorLogger
     {
         public static void Main(string[] args)
         {
-            Calculator calculator = new Calculator(new Logger());
-            new Logger().Log($"result: {calculator.Add(1, 2)}");
+            ILogger logger = new Logger();
+            Calculator calculator = new Calculator(logger);
+            logger.Log($"result: {calculator.Add(1, 2)}");
         }
     }
 }
